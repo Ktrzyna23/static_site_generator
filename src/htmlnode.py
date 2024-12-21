@@ -21,6 +21,8 @@ class HTMLNode:
             self.children == other.children and
             self.props == other.props
         )
+    def add_child(self, child_node):
+        self.children.append(child_node)
 class LeafNode(HTMLNode):
     def __init__(self,tag, value, props = None):
         if value is None:

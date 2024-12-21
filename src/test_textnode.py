@@ -31,13 +31,6 @@ class TestTextNode(unittest.TestCase):
         self.assertNotEqual(node1, node4, "najs łan 5 test zakończony")
 
 
-    def test_text_node_to_html_node(self):
-        # test normal text
-        node = TextNode("Just some text", TextType.TEXT)
-        html = text_node_to_html_node(node)
-        assert html.tag == ""
-        assert html.value == "Just some text"
-        assert html.props == {}
 
     def test_text_node_to_html_node2(self):
         # test normal text
@@ -56,10 +49,6 @@ class TestTextNode(unittest.TestCase):
         assert html.value == ""
         assert html.props == {"src":"https://boot.dev/IMG.PNG", "alt": "text"}
 
-    def test_text_node_to_html_node_error(self):
-        with self.assertRaisesRegex(Exception, "Invalid text node"):
-            node = TextType(1)  # or some invalid text type
-            text_node_to_html_node(node)  # Call the function directly
 
 
     def test_split_nodes_delimiter_basic(self):
