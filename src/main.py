@@ -1,7 +1,17 @@
 from textnode import *
+import os
+import shutil
+
+from copystatic import copy_files_recursive
+dir_path_static = "./static"
+dir_path_public = "./public"
+
 def main():
-    new_text = TextNode("UngaBunga", TextType.BOLD) 
-    print(new_text)
+    print("Deleting public directory...")
+    print("Copying static files to public directory...")
+    copy_files_recursive(dir_path_static, dir_path_public)
+
+
 
 if __name__ == "__main__":
     main()
